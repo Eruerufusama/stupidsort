@@ -21,6 +21,7 @@
 from random import choice, randint
 import asyncio
 
+
 def main():
     unsorted_array = [
         ("James Bond", 131.2),
@@ -32,13 +33,11 @@ def main():
 
     sort_and_print(unsorted_array, sleepsort, 1)
 
-
 def sort_and_print(unsorted, sorting_algorithm, index=None):
     sorted_array = master_sort(unsorted, sorting_algorithm, index)
 
     title, budget = sorted_array[-1]
     print(f"The movie with the largest budget is '{title}', which had a budget of {budget} million dollars.")
-
 
 # Helper functions below.
 def master_sort(unsorted, sorting_algorithm, index=None):
@@ -65,8 +64,8 @@ def master_sort(unsorted, sorting_algorithm, index=None):
             raise MissingSortingIndexError("Each element in the array was an iterable, but no index was provided.")
         # Runs if index was out of bounds of the element-iterable.
         elif index > len(unsorted[0]):
-            raise IndexOutOfBoundsError(f"length of each element was {len(unsorted[0])}, but the provided index as {index}")
-        
+            raise IndexOutOfBoundsError(f"length of each element was {len(unsorted[0])}, but the provided index as {index}.")
+
         else:
             # To restore elements to their respective datatype later.
             datatype = type(unsorted[0])
@@ -172,16 +171,11 @@ def recursive_bogosort(unsorted):
         return unsorted
 
 # TO BE IMPLIMENTED
-def outsort(unsorted):
-    """Outsources the sorting to fiverr.com.
-        Best case big O:    O(1)
-        Average case big O: O(1)
-        Worst case big O:   O(1)
 
-    Arguments:
-        li {list} -- An unsorted list.
-    """
-    pass # TODO
+
+
+    
+
 
 # TO BE IMPLIMENTED
 def bayessort(unsorted):
@@ -193,10 +187,10 @@ def bayessort(unsorted):
     """
     pass #TODO
 
-def sleepsort(unsorted, speed=0.001):
+def sleepsort(unsorted, speed=0.00000000001):
     """Sorts an unsorted array <A> by asynchronously appending <e> after sleeping for <e> * speed seconds.
         Big O: Good question...
-    
+
     Arguments:
         unsorted {iterable} -- An iterable of int/float
     
@@ -248,6 +242,7 @@ class ArrayElement:
     def __ge__(self, other):
         return self.value >= other
     
+    # Multiply
     def __mul__(self, other):
         return self.value * other
 
